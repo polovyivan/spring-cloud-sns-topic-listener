@@ -9,7 +9,7 @@ export AWS_DEFAULT_PROFILE=localstack
 
 echo "########### Setting env variables ###########"
 export HTTP_SUBSCRIBER=http://host.docker.internal:8080/spring-cloud-sns-topic-listener/subscribers/purchase-transactions
-export SQS_DLQ=sqs-dlq
+export SQS_DLQ=purchase-transactions-topic-dlq
 export SNS_TOPIC=purchase-transactions-topic
 
 echo "########### Creating DLQ SQS  ###########"
