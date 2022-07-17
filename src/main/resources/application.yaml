@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /spring-cloud-sns-topic-listener
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:customerdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+aws:
+  region: us-east-1
+  access-key: aws_access_key_id
+  secret-key: aws_secret_access_key
+  sns-endpoint: http://localhost:4566
