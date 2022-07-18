@@ -7,6 +7,7 @@ import com.polovyi.ivan.tutorials.repository.PurchaseTransactionRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,7 @@ public record PurchaseTransactionService(PurchaseTransactionRepository purchaseT
 
         PurchaseTransactionEntity purchaseTransactionEntity = JsonConverter.stringJsonToObject(message,
                 PurchaseTransactionEntity.class);
+        purchaseTransactionEntity.setCreatedAt(LocalDate.now());
 
         purchaseTransactionRepository.save(purchaseTransactionEntity);
         log.info("Purchase transaction saved!");
